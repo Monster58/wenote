@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "微手记",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar"
+  }
+}

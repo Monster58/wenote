@@ -1,0 +1,1 @@
+<view class="todo-page">待办事项<u-tabbar vue-id="67e88900-1" list="{{vuex_tabbar}}" mid-button="{{true}}" before-switch="{{beforeSwitch}}" bind:__l="__l"></u-tabbar></view>

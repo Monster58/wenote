@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "微手记",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "u-sticky": "/uview-ui/components/u-sticky/u-sticky",
+    "u-tabs": "/uview-ui/components/u-tabs/u-tabs",
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-loadmore": "/uview-ui/components/u-loadmore/u-loadmore",
+    "u-empty": "/uview-ui/components/u-empty/u-empty",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar",
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
+  }
+}

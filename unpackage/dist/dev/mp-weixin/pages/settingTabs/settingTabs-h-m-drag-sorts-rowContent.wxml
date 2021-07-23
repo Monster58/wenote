@@ -1,0 +1,1 @@
+<view class="row data-v-251e4e64"><u-icon vue-id="7eabff22-3" name="file-text" class="data-v-251e4e64" bind:__l="__l"></u-icon><text class="text data-v-251e4e64">{{row.name}}</text></view>

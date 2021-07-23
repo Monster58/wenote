@@ -1,0 +1,48 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "写作",
+          "pathName": "pages/writing/writing",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "微记",
+          "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "文章详情",
+          "pathName": "pages/articleDetail/articleDetail",
+          "query": "_id=60e80cece22fbe0001b72410",
+          "scene": null
+        },
+        {
+          "name": "分类管理",
+          "pathName": "pages/settingTabs/settingTabs",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "微手记",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar",
+    "u-modal": "/uview-ui/components/u-modal/u-modal",
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
+  }
+}

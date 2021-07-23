@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/todo/todo",
+    "pages/writing/writing",
+    "pages/efficiency/efficiency",
+    "pages/about/about",
+    "pages/articleDetail/articleDetail",
+    "pages/settingTabs/settingTabs"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home"
+      },
+      {
+        "pagePath": "pages/todo/todo"
+      },
+      {
+        "pagePath": "pages/writing/writing"
+      },
+      {
+        "pagePath": "pages/efficiency/efficiency"
+      },
+      {
+        "pagePath": "pages/about/about"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

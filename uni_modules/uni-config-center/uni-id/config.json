@@ -1,0 +1,34 @@
+{
+	"passwordSecret": "0taLkZpSWYXB4pdEZd",
+	"tokenSecret": "qQh1Je15UTyFxm0OAk",
+	"tokenExpiresIn": 7200,
+	"tokenExpiresThreshold": 600,
+	"bindTokenToDevice": false,
+	"passwordErrorLimit": 6,
+	"passwordErrorRetryTime": 3600,
+	"autoSetInviteCode": false,
+	"forceInviteCode": false,
+	"removePermissionAndRoleFromToken": false,
+	"mp-weixin": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"weixin": {
+				"appid": "wx50de00b1557d3ac1",
+				"appsecret": "63341bf9a52635067d520ebd995c523c"
+			}
+		}
+	},
+	"service": {
+		"sms": {
+			"name": "微手记",
+			"codeExpiresIn": 180,
+			"smsKey": "your sms key",
+			"smsSecret": "your sms secret"
+		},
+		"univerify": {
+			"appid": "_UNI_9894A54",
+			"apiKey": "fe094d4f18da36016f24fdb27c3719cd",
+			"apiSecret": "da1966fbe390311a2230ff4b430aafb4"
+		}
+	}
+}
