@@ -74,13 +74,23 @@
 					</u-checkbox>
 				</u-checkbox-group>
 			</u-form-item> -->
+			<u-form-item label="分类">
+				<u-radio-group v-if="tabsList.length" v-model="tab">
+					<u-radio v-for="(item, index) in tabsList" :key="index" :name="item.name" :disabled="item.disabled" shape="square">
+						{{ item.name }}
+					</u-radio>
+				</u-radio-group>
+				<view v-else>
+					分类未创建
+				</view>
+			</u-form-item>
 			<u-form-item>
 				<u-button @click="submit" type="primary">保存</u-button>
 			</u-form-item>
 		</u-form>
 		<u-tabbar :list="vuex_tabbar" :mid-button="true" :before-switch="beforeSwitch"></u-tabbar>
 		<u-toast ref="uToast" />
-		<u-toast ref="globalUToast"/>
+		<u-toast ref="globalUToast" />
 	</div>
 </template>
 
@@ -103,12 +113,14 @@
 						// 可以单个或者同时写两个触发验证方式 
 						trigger: ['change', 'blur'],
 					}]
-				}
+				},
+				tab: null,
+				tabsList: []
 			}
 		},
 		mixins: [minix],
 		onLoad() {
-			console.log('writing-onLoad')
+			this.getTabs()
 		},
 		onReady() {
 			this.$refs.uForm.setRules(this.rules);
@@ -182,6 +194,7 @@
 				})
 			},
 			submit() {
+				const currentTab = this.tabsList.find(item => item.name === this.tab)
 				const that = this
 				this.$refs.uForm.validate(valid => {
 					if (valid) {
@@ -197,10 +210,11 @@
 								uniCloud.callFunction({
 									name: 'add-article',
 									data: {
-										openid: that.vuex_openid, 
+										openid: that.vuex_openid,
 										title,
 										html,
-										text
+										text,
+										tabsId: currentTab.id
 									},
 									success(res) {
 										if (res.result.code === 200) {
@@ -233,6 +247,21 @@
 					// publish: false,
 				}
 				this.clear()
+			},
+			getTabs() {
+				const that = this
+				// 获取tabs
+				uniCloud.callFunction({
+					name: 'get-tabs',
+					data: {
+						_id: this.vuex_openid,
+					},
+					success(res) {
+						if (res.result.code === 200) {
+							that.tabsList = res.result.data.tabs
+						} else {}
+					}
+				});
 			}
 		}
 	}

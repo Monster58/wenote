@@ -1,39 +1,31 @@
 <template>
 	<view>
-
-		<view class="user-info u-flex user-box u-p-l-30 u-p-r-20 u-p-b-30 u-p-t-30">
-			<view class="u-m-r-10">
-				<u-avatar :src="vuex_user.avatarUrl" size="140"></u-avatar>
+		<view class="app-info">
+			<view class="app-logo">
+				<image src="../../static/logo.png" mode=""></image>
 			</view>
-			<view class="u-flex-1">
-				<view class="u-font-18 u-p-b-20">Hi! {{vuex_user.nickName? vuex_user.nickName: '未登录'}}</view>
-				<!-- <view class="u-font-14 u-tips-color">微信号:{{vuex_user.nickName}}</view> -->
+			<view class="app-name">
+				<text>
+					微手记
+				</text>
 			</view>
-			<view class="u-m-l-10 u-p-10">
-				<u-icon name="arrow-right" color="#969799" size="28"></u-icon>
+			<view class="app-des">
+				<text>
+					个人博客笔记效率工具
+				</text>
 			</view>
-			<button v-if="!vuex_user" class="getuserinfo-btn" @click="wxGetUserInfo"></button>
-		</view>
-
-
-		<view class="u-m-t-20">
-			<u-cell-group>
-				<u-cell-item @click="goHome" icon="rmb-circle" title="我发布的"></u-cell-item>
-			</u-cell-group>
 		</view>
 
 		<view class="u-m-t-20">
 			<u-cell-group>
-				<u-cell-item icon="star" title="我的收藏"></u-cell-item>
-				<u-cell-item icon="heart" title="我的关注"></u-cell-item>
+				<u-cell-item @click="toPage('updateLog')" title="更新日志"></u-cell-item>
+				<u-cell-item @click="toPage('agreement')" title="用户使用协议"></u-cell-item>
+				<u-cell-item title="版本" :arrow="false">
+					<text slot="right-icon">1.0.0</text>
+				</u-cell-item>
 			</u-cell-group>
 		</view>
 
-		<view class="u-m-t-20">
-			<u-cell-group>
-				<u-cell-item icon="setting" title="设置"></u-cell-item>
-			</u-cell-group>
-		</view>
 		<u-tabbar :list="vuex_tabbar" :mid-button="true" :before-switch="beforeSwitch"></u-tabbar>
 		<u-modal v-model="loginModal" :mask-close-able="true" :zoom="false" content="请先登录!" confirm-text="前往登录" @confirm="toLogin"></u-modal>
 		<u-toast ref="globalUToast" />
@@ -81,23 +73,46 @@
 				uni.switchTab({
 					url: '/pages/home/home'
 				})
+			},
+			toPage(page){
+				uni.navigateTo({
+				    url: `/pages/${page}/${page}`
+				});
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-	.user-info {
-		position: relative;
-
-		.getuserinfo-btn {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			left: 0;
-			top: 0;
-			border: 0;
-			background-color: transparent;
+	.app-info {
+		margin: 60rpx auto;
+		.app-logo {
+			width: 120rpx;
+			height: 120rpx;
+			margin: 0 auto;
+			border-radius: 50%;
+			overflow: hidden;
+			text-align: center;
+			image {
+				width: 100%;
+				height: 100%;
+			}
 		}
+		.app-name {
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.app-des {
+			font-size: 12px;
+			color: #6d6d6d;
+		}
+		.app-name,.app-des {
+			display: flex;
+			justify-content: center;
+		}
+	}
+	.u-m-t-20 {
+		width: 80vw;
+		margin: 0 auto;
 	}
 </style>

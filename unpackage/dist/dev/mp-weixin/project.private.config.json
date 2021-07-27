@@ -41,6 +41,30 @@
           "pathName": "pages/settingTabs/settingTabs",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "关于",
+          "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "协议",
+          "pathName": "pages/agreement/agreement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "更新日志",
+          "pathName": "pages/updateLog/updateLog",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "效率/归属地查询",
+          "pathName": "pages/efficiency/phoneSearch/phoneSearch",
+          "query": "",
+          "scene": null
         }
       ]
     }

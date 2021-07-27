@@ -96,22 +96,28 @@ var components
 try {
   components = {
     uForm: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-form/u-form */ "uview-ui/components/u-form/u-form").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-form/u-form.vue */ 162))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-form/u-form */ "uview-ui/components/u-form/u-form").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-form/u-form.vue */ 187))
     },
     uFormItem: function() {
-      return Promise.all(/*! import() | uview-ui/components/u-form-item/u-form-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-form-item/u-form-item")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-form-item/u-form-item.vue */ 169))
+      return Promise.all(/*! import() | uview-ui/components/u-form-item/u-form-item */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-form-item/u-form-item")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-form-item/u-form-item.vue */ 194))
     },
     uInput: function() {
-      return Promise.all(/*! import() | uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-input/u-input.vue */ 178))
+      return Promise.all(/*! import() | uview-ui/components/u-input/u-input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-input/u-input")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-input/u-input.vue */ 203))
+    },
+    uRadioGroup: function() {
+      return Promise.all(/*! import() | uview-ui/components/u-radio-group/u-radio-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-radio-group/u-radio-group")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-radio-group/u-radio-group.vue */ 210))
+    },
+    uRadio: function() {
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-radio/u-radio */ "uview-ui/components/u-radio/u-radio").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-radio/u-radio.vue */ 217))
     },
     uButton: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 141))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 166))
     },
     uTabbar: function() {
-      return Promise.all(/*! import() | uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-tabbar/u-tabbar.vue */ 148))
+      return Promise.all(/*! import() | uview-ui/components/u-tabbar/u-tabbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-tabbar/u-tabbar")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-tabbar/u-tabbar.vue */ 173))
     },
     uToast: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 155))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-toast/u-toast */ "uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-toast/u-toast.vue */ 180))
     }
   }
 } catch (e) {
@@ -169,6 +175,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -341,17 +357,20 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../minix/index.js
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = { data: function data() {return { form: { title: '' // publish: false,
       }, editorCtx: null, placeholder: '开始输入...', formats: null, rules: { title: [{ required: true, message: '请输入标题', // 可以单个或者同时写两个触发验证方式 
-          trigger: ['change', 'blur'] }] } };}, mixins: [_index.default], onLoad: function onLoad() {console.log('writing-onLoad');}, onReady: function onReady() {this.$refs.uForm.setRules(this.rules);}, onShow: function onShow() {console.log('writing-onShow');}, onHide: function onHide() {console.log('writing-onHide');}, methods: { onEditorReady: function onEditorReady() {var _this = this;uni.createSelectorQuery().select('#editor').context(function (res) {_this.editorCtx = res.context;}).exec();}, onStatusChange: function onStatusChange(e) {this.formats = e.detail;}, format: function format(name, value) {this.editorCtx.format(name, value);}, removeFormat: function removeFormat() {this.editorCtx.removeFormat();}, insertDate: function insertDate() {var date = new Date();var formatDate = "".concat(date.getFullYear(), "/").concat(date.getMonth() + 1, "/").concat(date.getDate());this.editorCtx.insertText({ text: formatDate });}, undo: function undo() {this.editorCtx.undo();}, redo: function redo() {this.editorCtx.redo();}, clear: function clear() {this.editorCtx.clear({ success: function success(res) {console.log("clear success");} });}, insertDivider: function insertDivider() {this.editorCtx.insertDivider({ success: function success() {console.log('insert divider success');} });}, insertImage: function insertImage() {var that = this;wx.chooseImage({ count: 1, success: function success() {that.editorCtx.insertImage({ src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543767268337&di=5a3bbfaeb30149b2afd33a3c7aaa4ead&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20151031%2Ftooopen_sy_147004931368.jpg', data: { id: 'abcd', role: 'god' },
-            success: function success() {
-              console.log('insert image success');
-            } });
-
-        } });
-
-    },
-    submit: function submit() {var _this2 = this;
+          trigger: ['change', 'blur'] }] }, tab: null, tabsList: [] };}, mixins: [_index.default], onLoad: function onLoad() {this.getTabs();}, onReady: function onReady() {this.$refs.uForm.setRules(this.rules);}, onShow: function onShow() {console.log('writing-onShow');}, onHide: function onHide() {console.log('writing-onHide');}, methods: { onEditorReady: function onEditorReady() {var _this = this;uni.createSelectorQuery().select('#editor').context(function (res) {_this.editorCtx = res.context;}).exec();}, onStatusChange: function onStatusChange(e) {this.formats = e.detail;}, format: function format(name, value) {this.editorCtx.format(name, value);}, removeFormat: function removeFormat() {this.editorCtx.removeFormat();}, insertDate: function insertDate() {var date = new Date();var formatDate = "".concat(date.getFullYear(), "/").concat(date.getMonth() + 1, "/").concat(date.getDate());this.editorCtx.insertText({ text: formatDate });}, undo: function undo() {this.editorCtx.undo();}, redo: function redo() {this.editorCtx.redo();}, clear: function clear() {this.editorCtx.clear({ success: function success(res) {console.log("clear success");} });}, insertDivider: function insertDivider() {this.editorCtx.insertDivider({ success: function success() {console.log('insert divider success');} });}, insertImage: function insertImage() {var that = this;wx.chooseImage({ count: 1, success: function success() {that.editorCtx.insertImage({ src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543767268337&di=5a3bbfaeb30149b2afd33a3c7aaa4ead&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20151031%2Ftooopen_sy_147004931368.jpg', data: { id: 'abcd', role: 'god' }, success: function success() {console.log('insert image success');} });} });}, submit: function submit() {var _this2 = this;
+      var currentTab = this.tabsList.find(function (item) {return item.name === _this2.tab;});
       var that = this;
       this.$refs.uForm.validate(function (valid) {
         if (valid) {
@@ -370,7 +389,8 @@ var _default = { data: function data() {return { form: { title: '' // publish: f
                   openid: that.vuex_openid,
                   title: title,
                   html: html,
-                  text: text },
+                  text: text,
+                  tabsId: currentTab.id },
 
                 success: function success(res) {
                   if (res.result.code === 200) {
@@ -403,6 +423,21 @@ var _default = { data: function data() {return { form: { title: '' // publish: f
         // publish: false,
       };
       this.clear();
+    },
+    getTabs: function getTabs() {
+      var that = this;
+      // 获取tabs
+      uniCloud.callFunction({
+        name: 'get-tabs',
+        data: {
+          _id: this.vuex_openid },
+
+        success: function success(res) {
+          if (res.result.code === 200) {
+            that.tabsList = res.result.data.tabs;
+          } else {}
+        } });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 8)["default"]))
 

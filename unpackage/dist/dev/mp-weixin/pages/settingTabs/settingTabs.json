@@ -9,6 +9,8 @@
     "u-empty": "/uview-ui/components/u-empty/u-empty",
     "u-button": "/uview-ui/components/u-button/u-button",
     "u-popup": "/uview-ui/components/u-popup/u-popup",
-    "u-field": "/uview-ui/components/u-field/u-field"
+    "u-field": "/uview-ui/components/u-field/u-field",
+    "u-tabbar": "/uview-ui/components/u-tabbar/u-tabbar",
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
   }
 }

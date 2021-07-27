@@ -1,0 +1,1 @@
+<view class="content"><u-time-line vue-id="a77b7e70-1" bind:__l="__l" vue-slots="{{['default']}}"><u-time-line-item vue-id="{{('a77b7e70-2')+','+('a77b7e70-1')}}" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content"><view class="u-order-desc">微手记1.0.0版本</view><view class="u-order-time">2021-07-26 22:30</view></view></u-time-line-item></u-time-line></view>

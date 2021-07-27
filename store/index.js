@@ -43,12 +43,19 @@ const store = new Vuex.Store({
 				iconPath: "home",
 				selectedIconPath: "home-fill",
 				text: '微记',
-				pagePath: '/pages/home/home'
-			}, {
+				pagePath: '/pages/home/home' 
+			}, 
+			// {
+			// 	iconPath: "list",
+			// 	selectedIconPath: "list-dot", 
+			// 	text: '待办',
+			// 	pagePath: '/pages/todo/todo'
+			// },
+			{
 				iconPath: "list",
-				selectedIconPath: "list-dot",
-				text: '待办',
-				pagePath: '/pages/todo/todo'
+				selectedIconPath: "list-dot", 
+				text: '分类',
+				pagePath: '/pages/settingTabs/settingTabs'
 			},
 			{
 				iconPath: "/static/tabbar/pencil.png",

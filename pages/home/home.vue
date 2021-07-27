@@ -2,7 +2,8 @@
 	<div class="weiji-page">
 		<u-sticky>
 			<view class="sticky-container">
-				<u-tabs :list="tabsList" :is-scroll="true" :current="currentTab" @change="tabsChanged"></u-tabs>
+				<u-tabs v-if="reRenderTabsBar" :list="tabsList" :is-scroll="true" :current="currentTab"
+					@change="tabsChanged"></u-tabs>
 				<view class="tabs-setting" @click="settingTabs">
 					<u-icon name="setting-fill"></u-icon>
 				</view>
@@ -45,7 +46,8 @@
 				tabsId: 0,
 				articleList: [],
 				currentPageNum: 1,
-				loadMoreStatus: 'loadmore'
+				loadMoreStatus: 'loadmore',
+				reRenderTabsBar: true
 			}
 		},
 		mixins: [minix],
@@ -76,7 +78,7 @@
 		methods: {
 			tabsChanged(index) {
 				console.log('===================');
-				console.log('index',index);
+				console.log('index', index);
 				console.log('===================');
 				this.currentTab = index;
 			},
@@ -133,7 +135,10 @@
 				})
 			},
 			settingTabs() {
-				uni.navigateTo({
+				// uni.navigateTo({
+				// 	url: `/pages/settingTabs/settingTabs`
+				// })
+				uni.switchTab({
 					url: `/pages/settingTabs/settingTabs`
 				})
 			},
@@ -163,11 +168,19 @@
 				})
 				this.getTabs()
 			},
-			'currentTab': function(){
+			'currentTab': function() {
 				this.getArticleList({
 					pageSize: 10,
 					pageNum: 1
 				})
+			},
+			'tabsList': function(newVal,oldVal) {
+				if(JSON.stringify(newVal) !== JSON.stringify(oldVal)){
+					this.reRenderTabsBar = false
+					this.$nextTick(() => {
+						this.reRenderTabsBar = true;
+					});
+				}
 			}
 		}
 	}
@@ -187,8 +200,10 @@
 			border-bottom: 1px solid #f7f7f7;
 			background: #fff;
 			margin-bottom: 6px;
+
 			u-tabs {
 				width: 86%;
+
 				/deep/ .u-tabs {
 					background: transparent !important;
 				}

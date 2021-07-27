@@ -6,7 +6,10 @@
     "pages/efficiency/efficiency",
     "pages/about/about",
     "pages/articleDetail/articleDetail",
-    "pages/settingTabs/settingTabs"
+    "pages/settingTabs/settingTabs",
+    "pages/agreement/agreement",
+    "pages/updateLog/updateLog",
+    "pages/efficiency/phoneSearch/phoneSearch"
   ],
   "subPackages": [],
   "window": {
@@ -25,7 +28,7 @@
         "pagePath": "pages/home/home"
       },
       {
-        "pagePath": "pages/todo/todo"
+        "pagePath": "pages/settingTabs/settingTabs"
       },
       {
         "pagePath": "pages/writing/writing"

@@ -58,6 +58,33 @@
             }
             
         }
+        ,{
+            "path" : "pages/agreement/agreement",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/updateLog/updateLog",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/efficiency/phoneSearch/phoneSearch",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"tabBar": {
 		"color": "#7A7E83",
@@ -67,9 +94,13 @@
 		"list": [{
 				"pagePath": "pages/home/home"
 			},
+			// {
+			// 	"pagePath": "pages/todo/todo"
+			// },
 			{
-				"pagePath": "pages/todo/todo"
-			}, {
+				"pagePath": "pages/settingTabs/settingTabs"
+			},
+			{
 				"pagePath": "pages/writing/writing"
 			}, {
 				"pagePath": "pages/efficiency/efficiency"

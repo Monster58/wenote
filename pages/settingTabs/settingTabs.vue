@@ -49,11 +49,16 @@
 				<u-button type="primary" @click="addTab">确定</u-button>
 			</view>
 		</u-popup>
+		
+		<u-tabbar :list="vuex_tabbar" :mid-button="true" :before-switch="beforeSwitch"></u-tabbar>
+		<u-toast ref="globalUToast" />
 	</view>
 </template>
 <script>
+	import minix from '../../minix/index.js'
 	import { nanoid } from 'nanoid/non-secure'
 	export default {
+		mixins: [minix],
 		data() {
 			return {
 				/*
